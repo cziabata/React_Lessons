@@ -1,6 +1,14 @@
-.App {
-  list-style-type: georgian;
+.app-wrapper{
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: 
+    "header-alias header-alias"
+    "nav-alias content-alias";
+  width: 1200px;
+  margin: 0 auto;
 }
-a {
-  margin-left: 5px;
+.app-wrapper-content {
+  grid-area: content-alias;
+  background-color: cadetblue;
 }
