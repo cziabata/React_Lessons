@@ -5,10 +5,12 @@ import Message from "./Message/Message";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "./../../redux/dialog-reducer";
 
 const Dialogs = (props) => {
+    
+    let state = props.store.getState().dialogPage;
 
-    let dialogsElements = props.appState.dialogData.map( dialog => <Dialog name={dialog.name} id={dialog.id}/>);
-    let messagesElements = props.appState.messageData.map( message => <Message message={message.message}/>)
-    let newMessageBody = props.appState.newMessageBody;
+    let dialogsElements = state.dialogData.map( dialog => <Dialog name={dialog.name} id={dialog.id}/>);
+    let messagesElements = state.messageData.map( message => <Message message={message.message}/>)
+    let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator())

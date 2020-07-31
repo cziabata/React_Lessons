@@ -1,5 +1,5 @@
-import { dialogReducer } from "./dialog-reducer";
-import { profileReducer } from "./profile-reducer";
+import profileReducer from "./profile-reducer";
+import dialogReducer from "./dialog-reducer";
 
 let store = {
   _state : {
@@ -10,7 +10,7 @@ let store = {
           ],
           newPostText : "",
     },
-    messagesPage : {
+    dialogPage : {
           dialogData : [
               {id: 1, name: "Julia"},
               {id: 2, name: "Chabak"},
