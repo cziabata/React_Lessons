@@ -3,8 +3,8 @@ import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Navbar/Nav';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
 import {Route, BrowserRouter} from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -13,8 +13,8 @@ function App(props) {
         <Header />
         <Nav />   
         <div className="app-wrapper-content">
-          <Route render = { () => <Profile profilePage = {props.state.profilePage} dispatch = {props.dispatch} />}  path="/profile"/>
-          <Route render = { () => <Dialogs store={props.store} />} path="/dialogs"/>
+          <Route render = { () => <Profile />}  path="/profile"/>
+          <Route render = { () => <DialogsContainer />} path="/dialogs"/>
         </div>
       </div>
     </BrowserRouter>
